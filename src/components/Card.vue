@@ -5,14 +5,9 @@ defineProps({
     default: '',
     required: false
   },
-  description: {
-    type: String,
-    default: '',
-    required: false
-  },
   price: {
     type: Number,
-    default: 0,
+    default: null,
     required: false
   },
   image: {
@@ -39,7 +34,7 @@ function pricePrefix(price) {
   </div>
   <div class="description">
     <h2>{{ name }}</h2>
-    <p>{{ description }}</p>
+    <slot name="body" />
     <span>¥<span class="price">{{ pricePrefix(price) }}</span></span>
   </div>
 </template>
